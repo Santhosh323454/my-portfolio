@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: theme('colors.brand.lightbg');
+    color: theme('colors.brand.dark');
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Dark Mode Base Overrides */
+  .dark body {
+    background-color: theme('colors.brand.darkbg');
+    color: #F8F9FA;
+  }
+}
+
+@layer components {
+
+  /* Common Section Container */
+  .section-container {
+    @apply w-full max-w-6xl mx-auto px-6 py-20;
+  }
+
+  /* OualiCard Style (Light + Dark Support) */
+  .ouali-card {
+    @apply bg-white/70 dark:bg-[#1A1A1D]/80 backdrop-blur-xl rounded-[24px] border border-orange-200 dark:border-orange-900/50 shadow-ouali-card dark:shadow-ouali-darkcard transition-all duration-300;
+  }
+
+  .ouali-card:hover {
+    @apply shadow-ouali-hover dark:shadow-ouali-darkhover -translate-y-1;
+    border-color: #F97316;
+  }
+
+  /* Orange Primary Button */
+  .btn-primary {
+    @apply bg-brand-orange text-white font-semibold py-3 px-8 rounded-full shadow-ouali-btn hover:bg-orange-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 inline-flex items-center justify-center gap-2;
+  }
+
+  /* Outline Button (Light + Dark Support) */
+  .btn-outline {
+    @apply bg-white dark:bg-brand-darkcard text-brand-dark dark:text-white font-semibold py-3 px-8 rounded-full border-2 border-brand-border dark:border-brand-darkborder hover:border-brand-orange dark:hover:border-brand-orange hover:text-brand-orange dark:hover:text-brand-orange hover:-translate-y-0.5 transition-all duration-300 inline-flex items-center justify-center gap-2;
+  }
+
+  /* Section Headings */
+  .section-heading {
+    @apply text-3xl md:text-4xl font-extrabold text-center mb-4 tracking-tight;
+  }
+
+  .section-subheading {
+    @apply text-sm md:text-base text-brand-gray dark:text-gray-400 text-center max-w-2xl mx-auto mb-16 font-medium leading-relaxed;
+  }
+
+  /* Text Highlight */
+  .heading-highlight {
+    @apply text-brand-orange;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.brand.lightbg');
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: theme('colors.brand.darkbg');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.brand.border');
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: theme('colors.brand.darkborder');
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.brand.orange');
+}

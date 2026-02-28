@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santhosh S | Aspiring Java Developer</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config for Lavender Bento theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        base: '#FDFDFD', // Very light off-white base
+                        card: '#FFFFFF', // Pure white cards
+                        lavender: {
+                            light: '#E6E6FA', // Soft Lavender (borders/shadows)
+                            deep: '#967BB6',  // Deep Lavender (text/accents)
+                            dark: '#6B5B95',  // Darker shade for strong text contrast
+                        }
+                    },
+                    borderRadius: {
+                        'bento': '24px',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .bento-card {
+                @apply relative bg-card/80 backdrop-blur-md border border-lavender-light rounded-bento p-8 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(150,123,182,0.15)] flex flex-col group shadow-[0_4px_20px_rgba(230,230,250,0.4)];
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-base text-gray-800 min-h-screen p-4 md:p-10 flex flex-col items-center justify-center antialiased selection:bg-lavender-deep selection:text-white mb-24 md:mb-0 relative overflow-x-hidden">
+
+    <!-- Ambient Subtle Lavender Mesh Gradient Background -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute -top-[10%] -left-[10%] w-[50vw] h-[50vw] bg-lavender-light/40 rounded-full blur-[120px]">
+        </div>
+        <div class="absolute bottom-[0%] right-[0%] w-[60vw] h-[60vw] bg-lavender-deep/5 rounded-full blur-[150px]">
+        </div>
+    </div>
+
+    <!-- Main Bento Grid Container -->
+    <main
+        class="relative z-10 w-full max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6 auto-rows-[minmax(180px,auto)]">
+
+        <!-- 1. HERO CARD (Large) -->
+        <article class="bento-card col-span-1 md:col-span-2 md:row-span-2 justify-center">
+            <h1 class="text-5xl lg:text-7xl font-extrabold text-lavender-dark tracking-tight mb-2">Santhosh S<span
+                    class="text-lavender-deep">.</span></h1>
+            <h2 class="text-xl lg:text-3xl font-bold text-lavender-deep mb-6 tracking-wide">
+                Aspiring Java Developer
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed max-w-lg font-medium">
+                Building scalable backend applications and solving real-world problems through clean and efficient code.
+            </p>
+        </article>
+
+        <!-- 2. FEATURED PROJECTS CARD (Wide) -->
+        <article
+            class="bento-card col-span-1 md:col-span-2 md:row-span-2 flex flex-col justify-between p-0! overflow-hidden border-lavender-light/80">
+            <div class="px-8 pt-8 mb-4 flex justify-between items-center">
+                <h3 class="text-2xl font-bold text-lavender-dark">Featured Projects</h3>
+                <i class="fas fa-layer-group text-lavender-light text-2xl"></i>
+            </div>
+
+            <div class="flex flex-col h-full gap-4 px-8 pb-8">
+                <!-- Task Master -->
+                <div
+                    class="block bg-lavender-light/10 border border-lavender-light/30 hover:bg-lavender-light/20 p-5 rounded-2xl transition-all duration-300 group/proj">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4
+                            class="text-xl font-bold text-lavender-dark group-hover/proj:text-lavender-deep transition-colors">
+                            Task Master</h4>
+                        <span
+                            class="text-[10px] font-bold tracking-wider uppercase px-3 py-1 bg-white border border-lavender-light text-lavender-deep rounded-full shadow-sm">Productivity
+                            Android App</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mb-3 font-medium">Built with Flutter and Hive DB. Features
+                        AI-assisted workflow and seamless offline persistence.</p>
+                    <div class="flex gap-2">
+                        <span
+                            class="text-[11px] font-bold tracking-wider uppercase px-2 py-1 bg-lavender-deep text-white rounded">Flutter</span>
+                        <span
+                            class="text-[11px] font-bold tracking-wider uppercase px-2 py-1 bg-lavender-deep text-white rounded">Hive
+                            DB</span>
+                    </div>
+                </div>
+
+                <!-- Smart Context AI -->
+                <div
+                    class="block bg-lavender-light/20 border border-lavender-deep/20 hover:border-lavender-deep/40 p-5 rounded-2xl transition-all duration-300 group/proj shadow-sm">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4
+                            class="text-lg font-bold text-lavender-dark group-hover/proj:text-lavender-deep transition-colors">
+                            Smart Context AI</h4>
+                        <span
+                            class="text-[10px] font-bold tracking-wider uppercase px-3 py-1 bg-white border border-lavender-light text-lavender-deep rounded-full shadow-sm">Chrome
+                            Extension</span>
+                    </div>
+                    <p class="text-sm text-gray-500 font-medium">
+                        Utilizes the powerful Gemini Vision API to deliver real-time contextual assistance and visual
+                        analysis directly in the browser.
+                    </p>
+                    <div class="flex gap-2 mt-3">
+                        <span
+                            class="text-[11px] font-bold tracking-wider uppercase px-2 py-1 bg-lavender-deep text-white rounded"><i
+                                class="fas fa-brain mr-1"></i> Gemini API</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- 3. SKILLS CARD (Clean Icon Grid) -->
+        <article
+            class="bento-card col-span-1 md:col-span-2 flex flex-col justify-between items-center sm:items-start text-center sm:text-left">
+            <h3 class="text-xl font-bold text-lavender-dark mb-6 w-full flex justify-between items-center">
+                Technical Armor
+                <i class="fas fa-code text-lavender-light text-xl"></i>
+            </h3>
+
+            <div class="grid grid-cols-3 sm:grid-cols-5 gap-6 w-full place-items-center">
+                <!-- Icon: Java -->
+                <div class="flex flex-col items-center gap-3 group/skill cursor-default">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-white shadow-sm border border-lavender-light flex items-center justify-center text-3xl text-gray-400 group-hover/skill:text-lavender-deep group-hover/skill:border-lavender-deep group-hover/skill:shadow-md transition-all duration-300 transform group-hover/skill:-translate-y-1">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <span
+                        class="text-[11px] font-bold text-gray-500 uppercase tracking-wider group-hover/skill:text-lavender-dark">Java</span>
+                </div>
+                <!-- Icon: Spring Boot -->
+                <div class="flex flex-col items-center gap-3 group/skill cursor-default">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-white shadow-sm border border-lavender-light flex items-center justify-center text-3xl text-gray-400 group-hover/skill:text-lavender-deep group-hover/skill:border-lavender-deep group-hover/skill:shadow-md transition-all duration-300 transform group-hover/skill:-translate-y-1">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <span
+                        class="text-[11px] font-bold text-gray-500 uppercase tracking-wider group-hover/skill:text-lavender-dark">Spring</span>
+                </div>
+                <!-- Icon: MySQL -->
+                <div class="flex flex-col items-center gap-3 group/skill cursor-default">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-white shadow-sm border border-lavender-light flex items-center justify-center text-3xl text-gray-400 group-hover/skill:text-lavender-deep group-hover/skill:border-lavender-deep group-hover/skill:shadow-md transition-all duration-300 transform group-hover/skill:-translate-y-1">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <span
+                        class="text-[11px] font-bold text-gray-500 uppercase tracking-wider group-hover/skill:text-lavender-dark">MySQL</span>
+                </div>
+                <!-- Icon: ABAP -->
+                <div class="flex flex-col items-center gap-3 group/skill cursor-default">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-white shadow-sm border border-lavender-light flex items-center justify-center text-3xl text-gray-400 group-hover/skill:text-lavender-deep group-hover/skill:border-lavender-deep group-hover/skill:shadow-md transition-all duration-300 transform group-hover/skill:-translate-y-1">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <span
+                        class="text-[11px] font-bold text-gray-500 uppercase tracking-wider group-hover/skill:text-lavender-dark">ABAP</span>
+                </div>
+                <!-- Icon: Flutter -->
+                <div class="flex flex-col items-center gap-3 group/skill cursor-default">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-white shadow-sm border border-lavender-light flex items-center justify-center text-3xl group-hover/skill:border-lavender-deep group-hover/skill:shadow-md transition-all duration-300 transform group-hover/skill:-translate-y-1">
+                        <svg class="w-7 h-7 fill-gray-400 group-hover/skill:fill-lavender-deep transition-colors"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M14.314 0L2.3 12 6 15.7 21.684 0h-7.37zm.014 11.072L7.857 17.53l3.67 3.67 2.697-2.686 2.6-2.597 1.056-1.073-3.552-3.772zm3.535 3.79l-1.066 1.065 4.545 4.536c.432.434.996.657 1.565.657h.063c.535 0 1.077-.205 1.488-.616L24 20.443l-6.137-5.582z" />
+                        </svg>
+                    </div>
+                    <span
+                        class="text-[11px] font-bold text-gray-500 uppercase tracking-wider group-hover/skill:text-lavender-dark">Flutter</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 4. CERTIFICATIONS (High Visibility Verified Section) -->
+        <article
+            class="bento-card col-span-1 md:col-span-1 md:row-span-2 shadow-[0_10px_40px_rgba(230,230,250,0.6)] border-lavender-deep/20 overflow-visible relative">
+            <div
+                class="absolute -top-4 -right-4 w-24 h-24 bg-lavender-light/30 rounded-full blur-xl pointer-events-none">
+            </div>
+            <h3 class="text-xl font-bold text-lavender-dark mb-6 flex justify-between items-center relative z-10">
+                Verified
+                <i class="fas fa-certificate text-lavender-deep/50 text-2xl"></i>
+            </h3>
+
+            <ul class="space-y-4 relative z-10 flex flex-col justify-center flex-grow">
+                <li
+                    class="p-4 rounded-xl bg-white border border-lavender-light shadow-sm hover:border-lavender-deep hover:shadow-md transition-all group/cert cursor-default">
+                    <div class="flex justify-between items-start mb-1">
+                        <h4 class="text-sm font-bold text-gray-700 group-hover/cert:text-lavender-dark">Google AI/ML
+                            Internship</h4>
+                        <i class="fas fa-check-circle text-lavender-deep"></i>
+                    </div>
+                    <p class="text-[11px] text-gray-400 font-bold uppercase tracking-widest">EduSkill • 2025</p>
+                </li>
+                <li
+                    class="p-4 rounded-xl bg-white border border-lavender-light shadow-sm hover:border-lavender-deep hover:shadow-md transition-all group/cert cursor-default">
+                    <div class="flex justify-between items-start mb-1">
+                        <h4 class="text-sm font-bold text-gray-700 group-hover/cert:text-lavender-dark">Oracle Cloud
+                            Infrastructure</h4>
+                        <i class="fas fa-check-circle text-lavender-deep"></i>
+                    </div>
+                    <p class="text-[11px] text-gray-400 font-bold uppercase tracking-widest">Certified</p>
+                </li>
+                <li
+                    class="p-4 rounded-xl bg-white border border-lavender-light shadow-sm hover:border-lavender-deep hover:shadow-md transition-all group/cert cursor-default">
+                    <div class="flex justify-between items-start mb-1">
+                        <h4 class="text-sm font-bold text-gray-700 group-hover/cert:text-lavender-dark">Salesforce
+                            Agentforce</h4>
+                        <i class="fas fa-check-circle text-lavender-deep"></i>
+                    </div>
+                    <p class="text-[11px] text-gray-400 font-bold uppercase tracking-widest">Specialist</p>
+                </li>
+            </ul>
+        </article>
+
+        <!-- 5. SOCIALS CARD (Minimalist) -->
+        <article
+            class="bento-card col-span-1 md:col-span-1 bg-gradient-to-br from-lavender-light/20 to-white flex flex-col p-0!">
+            <h3 class="text-xl font-bold text-lavender-dark px-8 pt-8 mb-4">Socials</h3>
+
+            <div class="flex flex-col px-8 pb-8 gap-1 flex-grow justify-center">
+                <!-- GitHub -->
+                <a href="https://github.com/Santhosh323454" target="_blank"
+                    class="flex items-center gap-4 group/social p-3 rounded-xl hover:bg-lavender-light/30 transition-colors">
+                    <div
+                        class="w-12 h-12 rounded-full bg-white border border-lavender-light flex flex-shrink-0 items-center justify-center text-gray-400 group-hover/social:border-lavender-deep group-hover/social:text-lavender-deep transition-all shadow-sm">
+                        <i class="fab fa-github text-xl"></i>
+                    </div>
+                    <div>
+                        <span
+                            class="block text-sm font-bold text-gray-700 group-hover/social:text-lavender-dark transition-colors">GitHub</span>
+                        <span class="block text-xs font-medium text-gray-500">Santhosh323454</span>
+                    </div>
+                </a>
+
+                <!-- LeetCode -->
+                <a href="https://leetcode.com/santhosh_323" target="_blank"
+                    class="flex items-center gap-4 group/social p-3 rounded-xl hover:bg-lavender-light/30 transition-colors">
+                    <div
+                        class="w-12 h-12 rounded-full bg-white border border-lavender-light flex flex-shrink-0 items-center justify-center text-gray-400 group-hover/social:border-lavender-deep group-hover/social:text-lavender-deep transition-all shadow-sm">
+                        <i class="fas fa-code text-lg"></i>
+                    </div>
+                    <div>
+                        <span
+                            class="block text-sm font-bold text-gray-700 group-hover/social:text-lavender-dark transition-colors">LeetCode</span>
+                        <span class="block text-xs font-medium text-gray-500">santhosh_323</span>
+                    </div>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/santhosh-s-24b791320" target="_blank"
+                    class="flex items-center gap-4 group/social p-3 rounded-xl hover:bg-lavender-light/30 transition-colors">
+                    <div
+                        class="w-12 h-12 rounded-full bg-white border border-lavender-light flex flex-shrink-0 items-center justify-center text-gray-400 group-hover/social:border-[#0A66C2] group-hover/social:text-[#0A66C2] transition-all shadow-sm">
+                        <i class="fab fa-linkedin-in text-lg"></i>
+                    </div>
+                    <div>
+                        <span
+                            class="block text-sm font-bold text-gray-700 group-hover/social:text-[#0A66C2] transition-colors">LinkedIn</span>
+                        <span class="block text-xs font-medium text-gray-500">Connect</span>
+                    </div>
+                </a>
+            </div>
+        </article>
+
+        <!-- 6. EDUCATION CARD (Minimalist Text) -->
+        <article
+            class="bento-card col-span-1 md:col-span-2 flex flex-col justify-center items-center text-center bg-white">
+            <div class="w-16 h-16 rounded-full bg-lavender-light/40 flex items-center justify-center mb-4 text-lavender-deep text-3xl shadow-inner border border-lavender-light"
+                style="box-shadow: inset 0 2px 4px rgba(150,123,182,0.1);">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3 class="text-xl font-bold text-lavender-dark mb-1">
+                B.Tech IT
+            </h3>
+            <p class="text-sm font-semibold text-gray-500 mb-4">
+                K S Rangasamy College of Technology
+            </p>
+            <div class="w-12 h-[2px] bg-lavender-light rounded-full mb-4"></div>
+            <p
+                class="text-lg font-bold text-lavender-deep bg-lavender-light/20 px-4 py-1.5 rounded-full border border-lavender-light">
+                CGPA: <span class="text-lavender-dark">7.48</span>
+            </p>
+        </article>
+    </main>
+
+    <!-- FLOATING ACTION: Download Resume (Solid Lavender) -->
+    <!-- Positioned fixed at the bottom center -->
+    <div class="fixed bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-50 animate-float">
+        <!-- Assuming href will link to actual resume in future -->
+        <a href="#"
+            class="group flex items-center gap-3 bg-lavender-deep text-white text-base font-bold px-8 py-4 rounded-full shadow-[0_10px_30px_rgba(150,123,182,0.5)] hover:bg-lavender-dark hover:shadow-[0_15px_40px_rgba(150,123,182,0.6)] hover:-translate-y-1 transition-all duration-300 border border-white/20">
+            <i class="fas fa-file-pdf text-xl"></i>
+            <span class="tracking-wide">Download Resume</span>
+        </a>
+    </div>
+
+    <!-- Removing script.js link for mouse glow as it conflicts with the soft minimal CSS aesthetic -->
+    <!-- <script src="script.js"></script> -->
+</body>
+
+</html>
